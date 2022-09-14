@@ -8,7 +8,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+
+          - name: Checkout the repo
+        uses: actions/checkout@v2
+        with: 
+          # This will create a directory named `my-repo` and copy the repo contents to it
+          # so that you can easily upload it to your remote server
+          path: my-repo
+
+
+             # Runs a set of commands using the runners shell
+     - name: Upload repo to remote server
+       env:
+           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+       run: |
+         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+         ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"
+         scp -o StrictHostKeyChecking=no -r -P ${{ secrets.PORT }} my-repo ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/target/directory
+
+
+    - uses: actions/checkout@v2
 
     - name: Copy repository contents via scp
       uses: appleboy/scp-action@master
