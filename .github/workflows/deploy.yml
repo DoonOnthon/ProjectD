@@ -15,11 +15,6 @@ steps:
       key: ${{ secrets.SSHKEY }} 
       known_hosts: 'placeholder'
 
-      steps:
-  # ...
-  - name: Adding Known Hosts
-    run: ssh-keyscan -H ${{ secrets.SSH_KNOWN_HOST }} >> ~/.ssh/known_hosts
-
     # steps:
     # - uses: actions/checkout@v1
 
