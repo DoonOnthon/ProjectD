@@ -13,7 +13,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: appleboy/checkout@master
+    - uses: appleboy/ssh-action@master
     # - name: copy file via ssh password
       # uses: appleboy/ssh-action@master
       with:
