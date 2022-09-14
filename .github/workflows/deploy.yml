@@ -20,6 +20,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
+        script: whoami
         source: "."
         target: "/data/www/default"
 
