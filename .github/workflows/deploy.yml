@@ -22,9 +22,6 @@ jobs:
         port: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         script: |
-        cd ProjectDr
-        git pull origin master
-        git status
 
 
 
