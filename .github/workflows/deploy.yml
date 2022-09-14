@@ -22,7 +22,7 @@ jobs:
         port: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         script: |
-        cd ProjectD
+        cd ProjectDr
         git pull origin master
         git status
 
