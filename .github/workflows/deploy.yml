@@ -18,9 +18,9 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-      with:
-        source: "."
-        target: "/data/www/default"
+      # with:
+      #   source: "."
+      #   target: "/data/www/default"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
