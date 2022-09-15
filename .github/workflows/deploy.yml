@@ -20,7 +20,10 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: |
+        passphrase: ${{ secrets.PASSPHRASE }}
+              script: |
+        whoami
+        ls -al
 
 
 
