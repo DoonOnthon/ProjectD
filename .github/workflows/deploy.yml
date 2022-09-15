@@ -18,9 +18,6 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-              script: |
-        whoami
-        ls -al
       # with:
       #   source: "."
       #   target: "/data/www/default"
@@ -33,4 +30,4 @@ jobs:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        script: ls
+        script:        ls -al
